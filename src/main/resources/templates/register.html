@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="starter-template">
+        <h2>亲爱的召唤师请注册</h2>
+        <p class="bg-danger" th:text=${login}></p>
+        <form class="form-signin" action="/register" method="post">
+            <div class="form-group">
+                <label for="username">账号</label>
+                <input type="text" id="username" class="form-control" name="name" placeholder="账号"/>
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" class="form-control" name="password" placeholder="密码"/>
+            </div>
+            <div class="form-group">
+                <label>段位</label>
+                <select name="role" id="" class="form-control">
+                    <option value="ROLE_USER">青铜</option>
+                    <option value="ROLE_ADMIN">白银</option>
+                </select>
+            </div>
+            <input type="submit" value="注册" class="btn btn-primary"/>
+            <input type="button" onclick="window.location.href='/login'" value="去登录" class="btn btn-info"/>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

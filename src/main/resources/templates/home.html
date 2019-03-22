@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>欢迎来到王者峡谷</h1>
+<div sec:authorize="isAuthenticated()">
+    <p>已登录</p>
+    <p>登录名：<span sec:authentication="name"></span></p>
+    <p>当前段位：
+        <span sec:authorize="hasRole('ROLE_ADMIN')">不屈白银</span>
+        <span sec:authorize="hasRole('ROLE_USER')">倔强青铜</span>
+    </p>
+    <button onclick="window.location.href='/admin'">白银用户传送门</button>
+    <button onclick="window.location.href='/user'">青铜用户传送门</button>
+</div>
+<p></p>
+<button onclick="window.location.href='/logout'">退出登录</button>
+</body>
+<script>
+
+</script>
+</html>
